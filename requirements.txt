@@ -1,0 +1,5 @@
+flask_cors
+rasa_nlu==0.15.1
+spacy==2.0.18
+sklearn_crfsuite
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz#egg=en_core_web_sm
