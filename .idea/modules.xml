@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/WhatsAppBot.iml" filepath="$PROJECT_DIR$/.idea/WhatsAppBot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/TeleBot.iml" filepath="$PROJECT_DIR$/.idea/TeleBot.iml" />
     </modules>
   </component>
 </project>
