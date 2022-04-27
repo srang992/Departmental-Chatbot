@@ -147,11 +147,26 @@ def slot_less_ug_respond(user_message, interpreter, response_list):
         return "I'm sorry :( I couldn't find anything like that"
 
 
-def get_response(msg, interpreter, param_value):
+def course_names(message, interpreter, params):
+    entities = interpreter.parse(message)['entities']
+    if entities != []:
+        for ent in entities:
+            params[ent['entity']] = str(ent['value'])
+
+    results = find_courses(params)
+    names = [r[0] for r in results]
+    params = {}
+    if names:
+        return """Here is the list:- \n {}""".format("\n ".join(names))
+    else:
+        return "Oops! I got nothing in my bucket🪣"
+
+
+def get_response(msg, interpreter, param_value_1):
     """
     function for responding the user message.
     :param interpreter: trained model
-    :param param_value: dictionary
+    :param param_value_1: dictionary
     :param msg: user messages.
     :return:
     """
@@ -159,26 +174,26 @@ def get_response(msg, interpreter, param_value):
     if intent == 'greetings':
         return random.choice(hello_responses)
     if intent == 'makaut_course_search':
-        response, param_value, names, count = slot_course_response(msg, param_value, interpreter, data_responses)
+        response, param_value, names, count = slot_course_response(msg, param_value_1, interpreter, data_responses)
         # print(param_value)
         return response
     if intent == "ask_for_pg_course_total_fee":
-        response, names, tuition_amount, count = slot_less_pg_respond(msg, interpreter, total_fees_responses)
+        response, names, tuition_amount, count = slot_less_pg_respond(msg, interpreter, pg_total_fees_responses)
         return response
     if intent == "ask_for_pg_course_tuition_fee":
-        response, names, tuition_amount, count = slot_less_pg_respond(msg, interpreter, tuition_fees_responses)
+        response, names, tuition_amount, count = slot_less_pg_respond(msg, interpreter, pg_tuition_fees_responses)
         return response
     if intent == "ask_for_pg_course_admission_fee":
-        response, names, tuition_amount, count = slot_less_pg_respond(msg, interpreter, admission_fees_responses)
+        response, names, tuition_amount, count = slot_less_pg_respond(msg, interpreter, pg_admission_fees_responses)
         return response
     if intent == "ask_for_bsc_course_tuition_fee":
-        response, names, tuition_amount, count = slot_less_ug_respond(msg, interpreter, tuition_fees_responses)
+        response, names, tuition_amount, count = slot_less_ug_respond(msg, interpreter, bsc_tuition_fees_responses)
         return response
     if intent == "ask_for_bsc_course_admission_fee":
-        response, names, tuition_amount, count = slot_less_ug_respond(msg, interpreter, admission_fees_responses)
+        response, names, tuition_amount, count = slot_less_ug_respond(msg, interpreter, bsc_admission_fees_responses)
         return response
     if intent == "ask_for_bsc_course_total_fee":
-        response, names, tuition_amount, count = slot_less_ug_respond(msg, interpreter, total_fees_responses)
+        response, names, tuition_amount, count = slot_less_ug_respond(msg, interpreter, bsc_total_fees_responses)
         return response
     if intent == 'thank you':
         return random.choice(thank_you_responses)
@@ -190,3 +205,13 @@ def get_response(msg, interpreter, param_value):
         return random.choice(goodbye_responses)
     if intent == "exam_related_query":
         return "Right now I have no information about this. You have to wait 4 to 5 months for that.", intent
+    if intent == 'makaut_course_list':
+        return course_names(msg, interpreter, param_value_1)
+    if intent == "asking_for_help":
+        return help_response
+    if intent == 'asking_for_certification_courses':
+        return certi_response
+    if intent == 'ask_about_course_types':
+        return course_types
+    if intent == 'asking_for_various_departments':
+        return departments_text

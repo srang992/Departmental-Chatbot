@@ -2692,6 +2692,180 @@
       {
         "intent": "ask_about_course_types",
         "text": "which type of courses do you provide"
+      },
+      {
+        "intent": "makaut_course_list",
+        "entities": [
+          {
+            "end": 10,
+            "entity": "department",
+            "start": 8,
+            "value": "Department of Information Technology"
+          }
+        ],
+        "text": "list of it courses"
+      },
+      {
+        "intent": "makaut_course_list",
+        "entities": [
+          {
+            "end": 22,
+            "entity": "department",
+            "start": 20,
+            "value": "Department of Information Technology"
+          }
+        ],
+        "text": "give me the list of it courses"
+      },
+      {
+        "intent": "makaut_course_list",
+        "entities": [
+          {
+            "end": 22,
+            "entity": "department",
+            "start": 20,
+            "value": "Department of Computer Science and Engineering"
+          }
+        ],
+        "text": "give me the list of cs courses"
+      },
+      {
+        "intent": "makaut_course_list",
+        "entities": [
+          {
+            "end": 10,
+            "entity": "department",
+            "start": 8,
+            "value": "Department of Computer Science and Engineering"
+          }
+        ],
+        "text": "list of cs courses"
+      },
+      {
+        "intent": "makaut_course_list",
+        "entities": [
+          {
+            "end": 33,
+            "entity": "department",
+            "start": 20,
+            "value": "Department of Media Science"
+          }
+        ],
+        "text": "give me the list of media science courses"
+      },
+      {
+        "intent": "makaut_course_list",
+        "entities": [
+          {
+            "end": 21,
+            "entity": "department",
+            "start": 8,
+            "value": "Department of Media Science"
+          }
+        ],
+        "text": "list of media science courses"
+      },
+      {
+        "intent": "makaut_course_list",
+        "entities": [
+          {
+            "end": 14,
+            "entity": "degree_type",
+            "start": 8,
+            "value": "M.Pharm"
+          }
+        ],
+        "text": "list of mpharm courses"
+      },
+      {
+        "intent": "makaut_course_list",
+        "entities": [
+          {
+            "end": 26,
+            "entity": "degree_type",
+            "start": 20,
+            "value": "M.Pharm"
+          }
+        ],
+        "text": "give me the list of mpharm courses"
+      },
+      {
+        "intent": "makaut_course_list",
+        "entities": [
+          {
+            "end": 23,
+            "entity": "degree_type",
+            "start": 20,
+            "value": "M.Sc"
+          },
+          {
+            "end": 37,
+            "entity": "department",
+            "start": 24,
+            "value": "Department of Media Science"
+          }
+        ],
+        "text": "give me the list of msc media science courses"
+      },
+      {
+        "intent": "makaut_course_list",
+        "entities": [
+          {
+            "end": 11,
+            "entity": "degree_type",
+            "start": 8,
+            "value": "M.Sc"
+          },
+          {
+            "end": 25,
+            "entity": "department",
+            "start": 12,
+            "value": "Department of Media Science"
+          }
+        ],
+        "text": "list of msc media science courses"
+      },
+      {
+        "intent": "makaut_course_list",
+        "entities": [
+          {
+            "end": 11,
+            "entity": "degree_type",
+            "start": 8,
+            "value": "B.Sc"
+          },
+          {
+            "end": 25,
+            "entity": "department",
+            "start": 12,
+            "value": "Department of Media Science"
+          }
+        ],
+        "text": "list of bsc media science courses"
+      },
+      {
+        "intent": "thank you",
+        "text": "thanks man"
+      },
+      {
+        "intent": "thank you",
+        "text": "thanks pal"
+      },
+      {
+        "intent": "goodbyes",
+        "text": "goodbye man"
+      },
+      {
+        "intent": "goodbyes",
+        "text": "goodbye pal"
+      },
+      {
+        "intent": "makaut_course_list",
+        "text": "give me the list"
+      },
+      {
+        "intent": "makaut_course_list",
+        "text": "display the list"
       }
     ],
     "regex_features": [],
